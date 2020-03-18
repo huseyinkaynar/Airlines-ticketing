@@ -27,6 +27,12 @@ public class AirportServiceImp implements AirportService {
         return airportRepo.findAll();
     }
 
+    @Override
+    public List<Airport> getSearchAirport(String airport) {
+
+        return airportRepo.findAirportByQuery(airport);
+    }
+
 
 
 

@@ -8,6 +8,7 @@ public interface AirportService {
 
     void saveAirport(Airport airport);
     List<Airport> allAirport();
+    List<Airport> getSearchAirport(String airport);
 
 
 }

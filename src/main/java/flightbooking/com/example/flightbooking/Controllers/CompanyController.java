@@ -1,5 +1,6 @@
 package flightbooking.com.example.flightbooking.Controllers;
 
+import flightbooking.com.example.flightbooking.Model.Airport;
 import flightbooking.com.example.flightbooking.Model.Company;
 import flightbooking.com.example.flightbooking.Services.CompanyService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,5 +25,10 @@ public class CompanyController {
     public String postCompany(@RequestBody Company company){
         companyService.saveCompany(company);
         return "saved";
+    }
+    @GetMapping("/search")
+    @ResponseBody
+    public ResponseEntity<List<Company>> searchAirport(@RequestParam(value = "company_name") String company) {
+        return new ResponseEntity<>(companyService.getSearchAirport(company), HttpStatus.OK);
     }
 }

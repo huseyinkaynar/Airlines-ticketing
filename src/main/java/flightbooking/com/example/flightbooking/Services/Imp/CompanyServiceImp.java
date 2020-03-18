@@ -1,5 +1,6 @@
 package flightbooking.com.example.flightbooking.Services.Imp;
 
+import flightbooking.com.example.flightbooking.Model.Airport;
 import flightbooking.com.example.flightbooking.Model.Company;
 import flightbooking.com.example.flightbooking.Repositories.CompanyRepo;
 import flightbooking.com.example.flightbooking.Services.CompanyService;
@@ -22,6 +23,12 @@ public class CompanyServiceImp implements CompanyService {
     @Override
     public List<Company> allCompany() {
         return companyRepo.findAll();
+    }
+
+    @Override
+    public List<Company> getSearchAirport(String company) {
+
+        return companyRepo.findAirportByQuery(company);
     }
 }
 

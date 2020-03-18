@@ -7,4 +7,5 @@ import java.util.List;
 public interface CompanyService {
     void saveCompany(Company company);
     List<Company> allCompany();
+    List<Company> getSearchAirport(String company);
 }

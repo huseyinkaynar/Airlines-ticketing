@@ -27,5 +27,10 @@ public class AirportController {
         airportService.saveAirport(airport);
         return "saved";
     }
+    @GetMapping("/search")
+    @ResponseBody
+    public ResponseEntity<List<Airport>> searchAirport(@RequestParam(value = "airport_name") String airport) {
+        return new ResponseEntity<>(airportService.getSearchAirport(airport), HttpStatus.OK);
+    }
 
 }
