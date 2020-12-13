@@ -15,7 +15,7 @@ import java.util.List;
 public class AirportController {
     @Autowired
     AirportService airportService;
-
+//selam
     @GetMapping("")
     @ResponseBody
     public ResponseEntity<List<Airport>> getAllAirport() {
